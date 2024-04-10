@@ -6,14 +6,6 @@ import bcrypt from "bcrypt";
 import cloudinary from "../services/cloudinary";
 import userModel from "../models/user.model";
 
-interface LikedUserInfo {
-  _id: string;
-  username: string;
-  profilePicture: string;
-  age: number;
-  dob: Date;
-  matched : boolean;
-}
 
 export class userRepository implements IUserCase {
   private readonly UserModel: Model<IUserSchema>;
@@ -71,7 +63,7 @@ export class userRepository implements IUserCase {
     try {
       console.log(req.file, "the request");
       if (req.file) {
-        const folderName = "Bea";
+        const folderName = "sentinel";
         const result = await cloudinary.uploader.upload(req.file.path, {
           public_id: `${folderName}/${req.file.originalname}`,
         });
