@@ -45,12 +45,12 @@ export class userRepository implements IUserCase {
           console.log("Login successful");
           return user;
         } else {
-          console.log("Password mismatch");
-          return false;
+          
+          return {message : "invalid password"};
         }
       } else {
-        console.log("User not found");
-        return false;
+      
+        return {message : "user not found"};
       }
     } catch (error) {
       console.error("Login failed:", error);
