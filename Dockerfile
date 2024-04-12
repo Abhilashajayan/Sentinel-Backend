@@ -1,8 +1,13 @@
-FROM node:alpine
-
+FROM node:21
+ENV MONGO_URI='mongodb+srv://abhilashajayan2001:7e2mwkQsfB7V8VH8@cluster0.nadpney.mongodb.net/'
 WORKDIR /app
-COPY package.json .
-COPY . .
+
+COPY package*.json ./
+
 RUN npm install
 
-CMD npm run build && npm start
+COPY . .
+
+EXPOSE 3003
+
+CMD ["npm", "run", "dev"]
