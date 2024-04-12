@@ -1,8 +1,8 @@
 import mongoose, { Schema, Document } from "mongoose";
 import { IUserSchema } from "../../adapters/interfaces/IUserSchema";
 
+
 const UserSchema = new Schema<IUserSchema>({
-    id: { type: String, required: true },
     username: { type: String, required: true },
     email: { type: String, required: true },
     password: { type: String },
@@ -11,7 +11,7 @@ const UserSchema = new Schema<IUserSchema>({
     profilePicture: { type: String },
     gender: { type: String },
     allergies: { type: [String] },
-    emergencyContacts: { type: String },
+    emergencyContacts: { type: [{ name: String, phone: String }], default: [] }, 
     address: { type: String },
     bloodType: { type: String },
     height: { type: String },

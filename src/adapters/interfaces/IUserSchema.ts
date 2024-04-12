@@ -1,7 +1,10 @@
 import { Date, Document } from "mongoose";
+interface IEmergencyContact {
+    name: string;
+    phone: string;
+}
 
 export interface IUserSchema extends Document {
-    id: string;
     username: string;
     email: string;
     password: string;
@@ -10,7 +13,7 @@ export interface IUserSchema extends Document {
     profilePicture: string; 
     gender: string;
     allergies: string[];
-    emergencyContacts:string; 
+    emergencyContacts:IEmergencyContact[]; 
     address: string; 
     bloodType: string; 
     height: string; 

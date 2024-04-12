@@ -4,11 +4,11 @@ export class UserEntity {
     public readonly email: string;
     public readonly password: string;
     public readonly dob: Date;
-    public readonly phone: string; 
+    public readonly phone: string;
     public readonly profilePicture: string;
     public readonly gender: string;
     public readonly allergies: string[]; 
-    public readonly emergencyContact: string; 
+    public readonly emergencyContacts: { name: string, phone: string }[]; 
     public readonly address: string; 
     public readonly bloodType: string; 
     public readonly height: string; 
@@ -29,7 +29,7 @@ export class UserEntity {
         profilePicture: string,
         gender: string,
         allergies: string[],
-        emergencyContact: string,
+        emergencyContacts: { name: string, phone: string }[], 
         address: string,
         bloodType: string,
         height: string,
@@ -49,7 +49,7 @@ export class UserEntity {
         this.profilePicture = profilePicture;
         this.gender = gender;
         this.allergies = allergies;
-        this.emergencyContact = emergencyContact;
+        this.emergencyContacts = emergencyContacts; 
         this.address = address;
         this.bloodType = bloodType;
         this.height = height;
