@@ -2,7 +2,7 @@
   "name": "user-service",
   "version": "1.0.0",
   "description": "",
-  "main": "app.ts",
+  "main": "app.js",
   "scripts": {
     "start": "node  dist/frameworks/app.js",
     "dev": "nodemon src/frameworks/app.ts",
