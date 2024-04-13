@@ -8,7 +8,7 @@ export interface IUserSchema extends Document {
     username: string;
     email: string;
     password: string;
-    dob: Date;
+    dob: string;
     phone: string; 
     profilePicture: string; 
     gender: string;

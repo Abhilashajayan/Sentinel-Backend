@@ -3,7 +3,7 @@ export class UserEntity {
     public readonly username: string;
     public readonly email: string;
     public readonly password: string;
-    public readonly dob: Date;
+    public readonly dob: string;
     public readonly phone: string;
     public readonly profilePicture: string;
     public readonly gender: string;
@@ -24,7 +24,7 @@ export class UserEntity {
         username: string,
         email: string,
         password: string,
-        dob: Date,
+        dob: string,
         phone: string,
         profilePicture: string,
         gender: string,
