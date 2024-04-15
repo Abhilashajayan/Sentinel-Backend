@@ -4,9 +4,9 @@ import { userRepository } from "../frameworks/repositories/user.repo";
 import { UserEntity } from "../entity/user.entity";
 import twilio from "twilio";
 import { Request } from "express";
-const authToken = process.env.authID;
-const accountSid = process.env.accountSid;
-const client = require("twilio")(accountSid, authToken);
+// const authToken = process.env.authID;
+// const accountSid = process.env.accountSid;
+// const client = require("twilio")(accountSid, authToken);
 
 export class UserUsecase implements IUserCase {
   constructor(private UserRepository: userRepository) {}
