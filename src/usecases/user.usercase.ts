@@ -27,14 +27,18 @@ export class UserUsecase implements IUserCase {
     return this.UserRepository.editUser(userId, data, req);
   }
 
-  async sosAlert(data: UserEntity): Promise<void> {
-    client.messages
-      .create({
-        body: "hi hello",
-        from: "+12515720398",
-        to: "+916238691742",
-      })
-      .then((message: any) => console.log(message.sid))
-      .done();
+  async sosAlert(data: UserEntity): Promise<any> {
+    try {
+      const message = await client.messages.create({
+          body: data,
+          from: "+12515720398", 
+          to: '+916238691742', 
+      });
+      console.log("SOS message sent successfully with SID:", message.sid);
+      return {message : "success"};
+  } catch (error) {
+      console.error("Error sending SOS message:", error);
   }
+  
+}
 }
