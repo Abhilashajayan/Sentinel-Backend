@@ -6,7 +6,6 @@ import bcrypt from "bcrypt";
 import cloudinary from "../services/cloudinary";
 import userModel from "../models/user.model";
 
-
 export class userRepository implements IUserCase {
   private readonly UserModel: Model<IUserSchema>;
 
@@ -45,12 +44,10 @@ export class userRepository implements IUserCase {
           console.log("Login successful");
           return user;
         } else {
-          
-          return {message : "invalid password"};
+          return { message: "invalid password" };
         }
       } else {
-      
-        return {message : "user not found"};
+        return { message: "user not found" };
       }
     } catch (error) {
       console.error("Login failed:", error);
@@ -58,7 +55,6 @@ export class userRepository implements IUserCase {
     }
   }
 
-  
   async editUser(userId: string, data: UserEntity, req: any): Promise<any> {
     try {
       console.log(req.file, "the request");
@@ -125,5 +121,5 @@ export class userRepository implements IUserCase {
     }
   }
 
-  
+  async sosAlert(data: UserEntity): Promise<void> {}
 }

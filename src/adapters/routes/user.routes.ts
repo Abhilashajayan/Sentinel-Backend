@@ -21,6 +21,10 @@ export class UserRouter {
       this.userController.login_User(req, res);
     });
 
+    this.router.post("/user/sos", (req: Request, res: Response) => {
+      this.userController.sos_Alert(req, res);
+    });
+
     this.router.post( 
       "/user/editUser/:userId",
       multerConfig.single("uploadPic"),

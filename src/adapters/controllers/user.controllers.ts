@@ -46,4 +46,16 @@ export class UserController {
     }
   }
 
+  async sos_Alert(req: Request, res: Response) {
+    try {
+      const userData : any = "hello";
+      console.log(userData);  
+      const users = await this.userUsecase.sosAlert(userData);
+      return res.status(200).json({ users });
+    } catch (error) {
+      res.status(500).send("Error while adding address");
+      console.log("Error while adding => ", error);
+    }
+  }
+
 }
