@@ -4,7 +4,7 @@ import { userRepository } from "../frameworks/repositories/user.repo";
 import { UserEntity } from "../entity/user.entity";
 import twilio from "twilio";
 import { Request } from "express";
-const authToken = process.env.authID;
+const authToken = '2c21b4ee121b1b51ca5587078776f020';
 const accountSid = process.env.accountSid;
 const client = twilio(accountSid, authToken);
 
@@ -30,7 +30,8 @@ export class UserUsecase implements IUserCase {
   async sosAlert(data: UserEntity): Promise<any> {
     try {
       console.log(data);
-      const body = `Alert! I'm in danger\tLocation: ${data.allergies} \t: ${data.address}\t\nBlood group: ${data.bloodType}`;
+      const body = `Alert! I'm in danger\tLocation: ${data.allergies} \t: ${data.address}\tBlood group: ${data.bloodType}`;
+      console.log(body);
         const message = await client.messages.create({
             body: body,
             from: '+12515720398',
