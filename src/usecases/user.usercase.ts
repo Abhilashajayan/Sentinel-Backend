@@ -29,6 +29,7 @@ export class UserUsecase implements IUserCase {
 
   async sosAlert(data: UserEntity): Promise<any> {
     try {
+      console.log(data);
       const body = `Alert! I'm in danger\tLocation: ${data.allergies} \t: ${data.address}\t\nBlood group: ${data.bloodType}`;
         const message = await client.messages.create({
             body: body,
