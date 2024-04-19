@@ -35,7 +35,7 @@ export class UserUsecase implements IUserCase {
         const message = await client.messages.create({
             body: body,
             from: '+12515720398',
-            to: '+916238691742'
+            to: '+918111942818'
         });
         console.log("SOS message sent successfully with SID:", message.sid);
     } catch (error) {
